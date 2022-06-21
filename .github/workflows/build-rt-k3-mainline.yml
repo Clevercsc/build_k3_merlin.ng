@@ -1,18 +1,30 @@
 name: build rt-k3-mainline
 
 
-on: 
-  release:
-    types: [published]
-  push:
-    tags:
-    - 'v*'
-#  branches: 
-#    - master
-#  schedule:
-#    - cron: 0 8 * * 5
-  watch:
-    types: [started]
+# on: 
+#   release:
+#     types: [published]
+#   push:
+#     tags:
+#     - 'v*'
+# #  branches: 
+# #    - master
+# #  schedule:
+# #    - cron: 0 8 * * 5
+#   watch:
+#     types: [started]
+on:
+  workflow_dispatch:
+      inputs:
+          name:
+              description: 'Person to greet'
+              required: true
+              default: 'Mona the Octocat'
+          home:
+              description: 'location'
+              required: false
+              default: 'The Octoverse'
+
     
 env:
   ET0MACADDR: "00:11:22:33:44:55"    
